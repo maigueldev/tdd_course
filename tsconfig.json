@@ -4,5 +4,6 @@
         "allowJs": true,
         "target": "es2019",
         "module": "CommonJS",
+        "strictNullChecks": true
     }
 }
