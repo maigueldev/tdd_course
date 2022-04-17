@@ -1,5 +1,7 @@
+import { httpRequest, httpResponse } from '../interfaces/http-interfaces'
+
 export class RegisterVehicle {
-  handle (httpRequest: any): any {
+  handle (httpRequest: httpRequest): httpResponse {
     if (!('name' in httpRequest.body)) {
       return {
         statusCode: 400,
@@ -12,6 +14,11 @@ export class RegisterVehicle {
         statusCode: 400,
         body: new Error('Error in the: model')
       }
+    }
+
+    return {
+      statusCode: 201,
+      body: 'Vehicle is created'
     }
   }
 }

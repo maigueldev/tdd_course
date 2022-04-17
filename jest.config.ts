@@ -13,5 +13,9 @@ export default {
   transform: {
     '.+\\.ts$': 'ts-jest'
   },
-  coveragePathIgnorePatterns: ['node_modules', 'helpers']
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    'helpers',
+    'interfaces'
+  ]
 }
