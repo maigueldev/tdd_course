@@ -1,4 +1,5 @@
 import { RegisterVehicle } from '../controllers/register-vehicle'
+import { MissingFormalParameter } from '../errors/client-error'
 
 describe('RegisterVehicle', () => {
   test('is the name does not exist return 400', () => {
@@ -14,7 +15,7 @@ describe('RegisterVehicle', () => {
     const httpResponse = sut.handle(httpRequest)
 
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Error in the: name'))
+    expect(httpResponse.body).toEqual(new MissingFormalParameter('name'))
   })
 
   test('is the model does not exist return 400', () => {
@@ -30,7 +31,7 @@ describe('RegisterVehicle', () => {
     const httpResponse = sut.handle(httpRequest)
 
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Error in the: model'))
+    expect(httpResponse.body).toEqual(new MissingFormalParameter('model'))
   })
 
   test('is the color does not exist return 400', () => {
@@ -46,7 +47,7 @@ describe('RegisterVehicle', () => {
     const httpResponse = sut.handle(httpRequest)
 
     expect(httpResponse.statusCode).toBe(400)
-    expect(httpResponse.body).toEqual(new Error('Error in the: color'))
+    expect(httpResponse.body).toEqual(new MissingFormalParameter('color'))
   })
 
   test('its ok, return 201', () => {
