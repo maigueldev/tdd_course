@@ -15,7 +15,6 @@ export default {
   },
   coveragePathIgnorePatterns: [
     'node_modules',
-    'helpers',
     'interfaces'
   ]
 }
